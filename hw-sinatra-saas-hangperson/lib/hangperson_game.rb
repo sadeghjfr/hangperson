@@ -19,7 +19,7 @@ class HangpersonGame
   def self.get_random_word
     require 'uri'
     require 'net/http'
-    uri = URI('http://watchout4snakes.com/wo4snakes/Random/RandomWord')
+    uri = URI('http://watchout4snakes.com/Random/RandomWord')
     Net::HTTP.post_form(uri ,{}).body
   end
 
@@ -83,7 +83,7 @@ class HangpersonGame
   end
   if (@wrong_guesses.length == 7)
     :lose
-  elsif (temps.length == count)
+  elsif (temps.length == count && count!=0)
     :win
   else
     :play
